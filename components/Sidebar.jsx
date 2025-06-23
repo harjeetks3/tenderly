@@ -1,7 +1,3 @@
-// components/Sidebar.jsx
-// Optimized responsive sidebar navigation with balanced width management
-// Maintains logo visibility and prevents excessive content shifting
-
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -102,7 +98,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
       {/* Sidebar */}
       <aside
         className={`
-          fixed top-0 left-0 h-full bg-white border-r border-gray-200 z-40 sidebar-transition
+          fixed top-0 left-0 h-screen bg-white border-r border-gray-200 z-40 sidebar-transition flex flex-col
           ${isCollapsed ? 'w-16' : 'w-60'}
           ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
           lg:relative lg:translate-x-0
@@ -152,7 +148,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         )}
 
         {/* Navigation */}
-        <nav className={`flex-1 ${isCollapsed ? 'p-2' : 'p-4'}`} role="navigation">
+        <nav className={`flex-1 overflow-y-auto ${isCollapsed ? 'p-2' : 'p-4'}`} role="navigation">
           <ul className="space-y-1" role="list">
             {navigationItems.map((item) => {
               const Icon = item.icon;
@@ -206,7 +202,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         </nav>
 
         {/* Footer with version info */}
-        <div className={`border-t border-gray-200 ${isCollapsed ? 'p-2' : 'p-4'}`}>
+        <div className={`border-t border-gray-200 mt-auto ${isCollapsed ? 'p-2' : 'p-4'}`}>
           {!isCollapsed ? (
             <div className="text-xs text-gray-500 text-center space-y-1">
               <div className="font-medium">TenderHub Pro</div>
