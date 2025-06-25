@@ -1,6 +1,6 @@
 // components/HomePage/HeroSection.jsx
-// Hero section component with main value proposition and CTA
-// Includes animated tender opportunities dashboard
+// Hero section component matching the provided screenshot design
+// Features AI-powered tender management with interactive dashboard
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -8,35 +8,31 @@ import {
   CheckCircleIcon, 
   PlayIcon,
   BoltIcon,
-  ChartBarIcon,
   TrendingUpIcon
 } from '@heroicons/react/24/outline';
 
 export default function HeroSection() {
   const [currentTender, setCurrentTender] = useState(0);
 
-  // Mock tender opportunities data
+  // Mock tender opportunities data matching the screenshot
   const tenderOpportunities = [
     {
       title: "Infrastructure Development Project",
       value: "$2.4M",
       match: "95%",
-      status: "Live",
-      type: "analyze"
+      status: "Live"
     },
     {
       title: "IT Services Modernization",
       value: "$890K",
       match: "87%",
-      status: "Live",
-      type: "analyze"
+      status: "Live"
     },
     {
       title: "Renewable Energy Installation",
       value: "$1.8M",
       match: "92%",
-      status: "Live",
-      type: "analyze"
+      status: "Live"
     }
   ];
 
@@ -49,35 +45,30 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-cyan-50 overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-1/2 -left-20 w-60 h-60 bg-cyan-100 rounded-full opacity-20 animate-pulse delay-1000"></div>
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+    <section className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-50 to-blue-50 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
           <div className="space-y-8">
             {/* AI Badge */}
-            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+            <div className="inline-flex items-center space-x-2 bg-blue-50 text-blue-600 px-4 py-2 rounded-full text-sm font-medium border border-blue-200">
               <BoltIcon className="h-4 w-4" />
               <span>AI-Powered Tender Management</span>
             </div>
 
             {/* Main Heading */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            <div className="space-y-6">
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                 Win More Tenders
                 <br />
                 with{' '}
                 <span className="text-blue-600">AI Intelligence</span>
               </h1>
               
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
-                Transform your tendering process with AI that discovers opportunities, 
-                analyzes requirements, ensures compliance, and helps you craft winning proposals.
+              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+                Transform your tendering process with AI that discovers 
+                opportunities, analyzes requirements, ensures compliance, and 
+                helps you craft winning proposals.
               </p>
             </div>
 
@@ -114,7 +105,7 @@ export default function HeroSection() {
 
           {/* Right Column - Tender Opportunities Dashboard */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-cyan-600 rounded-2xl p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 rounded-2xl p-6 shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
               {/* Dashboard Header */}
               <div className="flex items-center justify-between mb-6">
                 <h3 className="text-white font-semibold text-lg">Tender Opportunities</h3>

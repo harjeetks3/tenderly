@@ -1,5 +1,5 @@
 /* styles/globals.css */
-/* Global styles with fixed sidebar and optimized layout utilities */
+/* Global styles with fixed sidebar and hero section styling */
 
 @tailwind base;
 @tailwind components;
@@ -66,6 +66,34 @@
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
   }
+
+  /* Hero section specific styles */
+  .hero-gradient {
+    background: linear-gradient(135deg, #f3f4f6 0%, #f9fafb 25%, #eff6ff 100%);
+  }
+
+  /* Tender card animations */
+  .tender-card-hover {
+    @apply transform transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Dashboard card styles */
+  .dashboard-card {
+    @apply bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 transition-all duration-500;
+  }
+
+  .dashboard-card.active {
+    @apply bg-white/20 scale-105;
+  }
+
+  .dashboard-card:hover {
+    @apply bg-white/15;
+  }
+
+  /* Win rate badge animation */
+  .win-rate-badge {
+    @apply transform transition-transform duration-300 hover:rotate-6;
+  }
 }
 
 /* Custom utilities */
@@ -88,7 +116,7 @@
     display: none;
   }
 
-  /* Homepage specific animations */
+  /* Hero section animations */
   .animate-fade-in {
     animation: fadeIn 0.8s ease-out forwards;
   }
@@ -96,6 +124,22 @@
   .animate-fade-in-delay {
     animation: fadeIn 0.8s ease-out 0.3s forwards;
     opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
@@ -111,6 +155,26 @@
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1deg);
+  }
+}
+
 /* Mobile-first responsive design helpers */
 @media (max-width: 768px) {
   .mobile-padding {
@@ -119,6 +183,11 @@
   
   .mobile-text {
     @apply text-sm;
+  }
+
+  /* Mobile hero adjustments */
+  .hero-mobile {
+    @apply text-4xl leading-tight;
   }
 }
 
@@ -133,6 +202,11 @@
 @media (min-width: 1024px) {
   .desktop-spacing {
     @apply px-8 py-6;
+  }
+
+  /* Desktop hero text sizing */
+  .hero-desktop {
+    @apply text-6xl leading-tight;
   }
 }
 
@@ -151,7 +225,11 @@
 @media (prefers-reduced-motion: reduce) {
   .sidebar-transition,
   .animate-fade-in,
-  .animate-fade-in-delay {
+  .animate-fade-in-delay,
+  .animate-slide-up,
+  .animate-float,
+  .tender-card-hover,
+  .win-rate-badge {
     @apply transition-none;
     animation: none !important;
   }
@@ -202,4 +280,39 @@
 .main-content-scroll {
   scroll-behavior: smooth;
   overflow-y: auto;
+}
+
+/* Hero section specific responsive adjustments */
+@media (max-width: 640px) {
+  .hero-section {
+    @apply py-16;
+  }
+  
+  .hero-title {
+    @apply text-4xl;
+  }
+  
+  .hero-subtitle {
+    @apply text-lg;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .hero-section {
+    @apply py-20;
+  }
+  
+  .hero-title {
+    @apply text-5xl;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-section {
+    @apply py-24;
+  }
+  
+  .hero-title {
+    @apply text-6xl;
+  }
 }
