@@ -1,5 +1,5 @@
 /* styles/globals.css */
-/* Global styles with optimized sidebar and layout utilities */
+/* Global styles with fixed sidebar and optimized layout utilities */
 
 @tailwind base;
 @tailwind components;
@@ -9,6 +9,11 @@
 @layer base {
   body {
     @apply bg-gray-50;
+  }
+  
+  /* Ensure smooth scrolling for main content */
+  html {
+    scroll-behavior: smooth;
   }
 }
 
@@ -39,7 +44,7 @@
     @apply animate-pulse bg-gray-200 rounded;
   }
 
-  /* Optimized sidebar tooltip styles */
+  /* Fixed sidebar tooltip styles */
   .sidebar-tooltip {
     @apply absolute left-full ml-3 px-3 py-2 bg-gray-900 text-white text-sm rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap z-50 pointer-events-none;
     top: 50%;
@@ -52,7 +57,7 @@
     margin-right: -1px;
   }
 
-  /* Optimized smooth transitions for sidebar */
+  /* Smooth transitions for sidebar */
   .sidebar-transition {
     @apply transition-all duration-300 ease-in-out;
   }
@@ -60,11 +65,6 @@
   /* Enhanced focus styles for accessibility */
   .focus-ring {
     @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
-  }
-
-  /* Content area transitions */
-  .content-transition {
-    @apply transition-all duration-300 ease-in-out;
   }
 }
 
@@ -78,11 +78,6 @@
     overflow: hidden;
   }
 
-  /* Smooth scrolling */
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
-
   /* Hide scrollbar but keep functionality */
   .scrollbar-hide {
     -ms-overflow-style: none;
@@ -91,20 +86,6 @@
   
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
-  }
-
-  /* Balanced spacing utilities */
-  .spacing-balanced {
-    @apply px-4 py-6 lg:px-8 lg:py-8;
-  }
-
-  /* Content width constraints */
-  .content-width-balanced {
-    max-width: calc(100vw - 16rem); /* Account for expanded sidebar */
-  }
-
-  .content-width-collapsed {
-    max-width: calc(100vw - 4rem); /* Account for collapsed sidebar */
   }
 
   /* Homepage specific animations */
@@ -119,24 +100,6 @@
 }
 
 /* Animation keyframes */
-@keyframes slideIn {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOut {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -171,15 +134,6 @@
   .desktop-spacing {
     @apply px-8 py-6;
   }
-  
-  /* Sidebar width constraints */
-  .sidebar-collapsed {
-    width: 4rem; /* 64px */
-  }
-  
-  .sidebar-expanded {
-    width: 15rem; /* 240px - optimized width */
-  }
 }
 
 /* High contrast mode support */
@@ -196,7 +150,6 @@
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .sidebar-transition,
-  .content-transition,
   .animate-fade-in,
   .animate-fade-in-delay {
     @apply transition-none;
@@ -216,7 +169,6 @@
 
 /* Dark mode support (for future implementation) */
 @media (prefers-color-scheme: dark) {
-  /* Dark mode styles can be added here when needed */
   .sidebar-tooltip {
     @apply bg-gray-800 text-gray-100;
   }
@@ -234,16 +186,20 @@
   }
 }
 
-/* Large screen optimizations */
-@media (min-width: 1440px) {
-  .content-max-width {
-    max-width: 1200px;
+/* Ensure fixed sidebar doesn't interfere with page content */
+@media (min-width: 1024px) {
+  /* Prevent content from going under the fixed sidebar */
+  .sidebar-collapsed-margin {
+    margin-left: 4rem; /* 64px - collapsed sidebar width */
+  }
+  
+  .sidebar-expanded-margin {
+    margin-left: 15rem; /* 240px - expanded sidebar width */
   }
 }
 
-/* Ultra-wide screen support */
-@media (min-width: 1920px) {
-  .content-ultra-wide {
-    max-width: 1400px;
-  }
+/* Smooth scrolling for main content area */
+.main-content-scroll {
+  scroll-behavior: smooth;
+  overflow-y: auto;
 }

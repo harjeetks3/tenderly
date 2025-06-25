@@ -95,18 +95,17 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Fixed Sidebar */}
       <aside
         className={`
           fixed top-0 left-0 h-screen bg-white border-r border-gray-200 z-40 sidebar-transition flex flex-col
           ${isCollapsed ? 'w-16' : 'w-60'}
           ${isMobileOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
-          lg:relative lg:translate-x-0
         `}
         aria-label="Main navigation"
       >
-        {/* Sidebar header with optimized spacing */}
-        <div className={`flex items-center border-b border-gray-200 ${isCollapsed ? 'p-3 justify-center' : 'p-4 justify-between'}`}>
+        {/* Sidebar header */}
+        <div className={`flex items-center border-b border-gray-200 flex-shrink-0 ${isCollapsed ? 'p-3 justify-center' : 'p-4 justify-between'}`}>
           {!isCollapsed && (
             <div className="flex items-center space-x-3 min-w-0">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -136,7 +135,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
 
         {/* Expand button for collapsed state */}
         {isCollapsed && (
-          <div className="p-2 border-b border-gray-100">
+          <div className="p-2 border-b border-gray-100 flex-shrink-0">
             <button
               onClick={toggleSidebar}
               className="hidden lg:block w-full p-2 rounded-md hover:bg-gray-100 transition-colors focus-ring"
@@ -147,8 +146,8 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
           </div>
         )}
 
-        {/* Navigation */}
-        <nav className={`flex-1 overflow-y-auto ${isCollapsed ? 'p-2' : 'p-4'}`} role="navigation">
+        {/* Navigation - flex-1 to take remaining space */}
+        <nav className={`flex-1 ${isCollapsed ? 'p-2' : 'p-4'} min-h-0`} role="navigation">
           <ul className="space-y-1" role="list">
             {navigationItems.map((item) => {
               const Icon = item.icon;
@@ -201,8 +200,8 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
           </ul>
         </nav>
 
-        {/* Footer with version info */}
-        <div className={`border-t border-gray-200 mt-auto ${isCollapsed ? 'p-2' : 'p-4'}`}>
+        {/* Footer with version info - flex-shrink-0 to prevent compression */}
+        <div className={`border-t border-gray-200 flex-shrink-0 ${isCollapsed ? 'p-2' : 'p-4'}`}>
           {!isCollapsed ? (
             <div className="text-xs text-gray-500 text-center space-y-1">
               <div className="font-medium">TenderHub Pro</div>

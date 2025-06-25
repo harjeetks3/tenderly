@@ -1,6 +1,6 @@
 // components/Layout.jsx
-// Optimized layout component with balanced content distribution
-// Prevents excessive rightward shifting and maintains proper spacing
+// Optimized layout component with fixed sidebar and proper content spacing
+// Ensures content doesn't overlap with the fixed sidebar
 
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
@@ -10,33 +10,24 @@ export default function Layout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar Navigation */}
+    <div className="min-h-screen bg-gray-50">
+      {/* Fixed Sidebar */}
       <Sidebar 
         isCollapsed={sidebarCollapsed} 
         setIsCollapsed={setSidebarCollapsed} 
       />
       
-      {/* Main Content Area with optimized spacing */}
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* Main content with responsive padding and max-width constraints */}
-        <main className={`
-          flex-1 transition-all duration-300 ease-in-out
-          ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-60'}
-          px-4 py-6 lg:px-8 lg:py-8
-          max-w-none
-        `}>
-          {/* Content wrapper with balanced margins */}
-          <div className="max-w-7xl mx-auto w-full">
+      {/* Main Content Area with proper left margin to account for fixed sidebar */}
+      <div className={`transition-all duration-300 ease-in-out ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-60'}`}>
+        {/* Main content */}
+        <main className="min-h-screen">
+          <div className="max-w-7xl mx-auto w-full px-4 py-6 lg:px-8 lg:py-8">
             {children}
           </div>
         </main>
         
-        {/* Footer with consistent spacing */}
-        <footer className={`
-          bg-white border-t border-gray-200 mt-auto transition-all duration-300 ease-in-out
-          ${sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-60'}
-        `}>
+        {/* Footer */}
+        <footer className="bg-white border-t border-gray-200">
           <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
             <div className="flex justify-center">
               <a
