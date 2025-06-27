@@ -19,10 +19,12 @@ import {
   ShieldCheckIcon,
   BoltIcon,
   Bars3Icon,
-  XMarkIcon,
+  XMarkIcon
+} from '@heroicons/react/24/outline';
+import {
   SparklesIcon,
   ChartBarIcon
-} from '@heroicons/react/24/outline';
+} from '@heroicons/react/24/solid';
 
 export default function Home() {
   const { user, loading } = useAuth();
