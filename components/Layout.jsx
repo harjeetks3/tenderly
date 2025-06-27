@@ -1,29 +1,15 @@
 // components/Layout.jsx
-// Optimized layout component with conditional sidebar for authenticated users only
-// Landing page gets full screen width without sidebar
+// Optimized layout component with fixed sidebar and proper content spacing
+// Assumes all users are authenticated for MVP development
 
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import ToastContainer from './ToastContainer';
-import { useAuth } from '../contexts/AuthContext';
 
 export default function Layout({ children }) {
-  const { user } = useAuth();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-  // For non-authenticated users, render without sidebar (full width)
-  if (!user) {
-    return (
-      <div className="min-h-screen">
-        <main className="min-h-screen">
-          {children}
-        </main>
-        <ToastContainer />
-      </div>
-    );
-  }
-
-  // For authenticated users, render with sidebar
+  // Always render with sidebar for MVP development
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Fixed Sidebar */}
