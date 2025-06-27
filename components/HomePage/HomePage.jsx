@@ -1,6 +1,6 @@
 // components/HomePage/HomePage.jsx
-// Main homepage container component
-// Orchestrates all homepage sections with proper structure
+// Main homepage container component with full-width layout
+// Orchestrates all homepage sections with proper structure for landing page
 
 import React from 'react';
 import Navigation from './Navigation';
