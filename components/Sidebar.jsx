@@ -107,18 +107,18 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         {/* Sidebar header */}
         <div className={`flex items-center border-b border-gray-200 flex-shrink-0 ${isCollapsed ? 'p-3 justify-center' : 'p-4 justify-between'}`}>
           {!isCollapsed && (
-            <div className="flex items-center space-x-3 min-w-0">
+            <Link href="/" className="flex items-center space-x-3 min-w-0 hover:opacity-80 transition-opacity">
               <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                 <span className="text-white font-bold text-sm">T</span>
               </div>
-              <span className="text-lg font-semibold text-gray-900 truncate">TenderHub</span>
-            </div>
+              <span className="text-lg font-semibold text-gray-900 truncate">Tenderly</span>
+            </Link>
           )}
           
           {isCollapsed && (
-            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+            <Link href="/" className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
               <span className="text-white font-bold text-base">T</span>
-            </div>
+            </Link>
           )}
 
           {/* Desktop collapse button */}
@@ -204,7 +204,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         <div className={`border-t border-gray-200 flex-shrink-0 ${isCollapsed ? 'p-2' : 'p-4'}`}>
           {!isCollapsed ? (
             <div className="text-xs text-gray-500 text-center space-y-1">
-              <div className="font-medium">TenderHub Pro</div>
+              <div className="font-medium">Tenderly Pro</div>
               <div>Version 1.0.0</div>
             </div>
           ) : (

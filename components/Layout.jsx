@@ -3,13 +3,28 @@
 // Assumes all users are authenticated for MVP development
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Sidebar from './Sidebar';
 import ToastContainer from './ToastContainer';
 
 export default function Layout({ children }) {
+  const router = useRouter();
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
-  // Always render with sidebar for MVP development
+  // Check if we're on the homepage to show full-width layout
+  const isHomePage = router.pathname === '/';
+
+  // If on homepage, render without sidebar for full-width experience
+  if (isHomePage) {
+    return (
+      <div className="min-h-screen bg-white">
+        {children}
+        <ToastContainer />
+      </div>
+    );
+  }
+
+  // For all other pages, render with sidebar
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Fixed Sidebar */}
