@@ -3,9 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/tenders": "pages/tenders.js",
-  "/api/tenders": "pages/api/tenders.js",
-  "/signup": "pages/signup.js",
-  "/company": "pages/company.js",
-  "/api/company": "pages/api/company.js"
+  "/company": "pages/company.js"
 }
