@@ -9,7 +9,7 @@ import {
   ShieldCheckIcon,
   SparklesIcon,
   ChartBarIcon,
-  TargetIcon
+  AdjustmentsHorizontalIcon
 } from '@heroicons/react/24/outline';
 
 export default function Features() {
@@ -45,7 +45,7 @@ export default function Features() {
       color: 'text-orange-600'
     },
     {
-      icon: TargetIcon,
+      icon: AdjustmentsHorizontalIcon,
       title: 'Win Probability Scoring',
       description: 'AI calculates your chances of success for each tender based on historical data and match quality.',
       color: 'text-red-600'
