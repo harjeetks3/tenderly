@@ -8,23 +8,23 @@ export default function HowItWorks() {
   const steps = [
     {
       number: '01',
-      title: 'Connect & Configure',
-      description: 'Integrate your systems and set up your business profile for personalized AI matching.'
+      title: 'Connect',
+      description: 'Build your profile and sync past work'
     },
     {
       number: '02',
-      title: 'Discover Opportunities',
-      description: 'AI continuously monitors and presents relevant tender opportunities with match scores.'
+      title: 'Match',
+      description: 'See curated tenders with scores'
     },
     {
       number: '03',
-      title: 'Analyze & Prepare',
-      description: 'Automated document analysis extracts requirements while AI assists in proposal creation.'
+      title: 'Generate',
+      description: 'Use AI to draft and verify'
     },
     {
       number: '04',
       title: 'Submit & Track',
-      description: 'Ensure compliance, submit bids, and track progress with real-time updates.'
+      description: 'Export or submit with blockchain record'
     }
   ];
 
@@ -34,10 +34,10 @@ export default function HowItWorks() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-            How AI Tenders Works
+            How Tenderly Works
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Simple, powerful, and automated - get started in minutes
+            Simple. Smart. Seamless.
           </p>
         </div>
 

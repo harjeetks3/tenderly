@@ -7,6 +7,7 @@ import Navigation from './Navigation';
 import Hero from './Hero';
 import Features from './Features';
 import HowItWorks from './HowItWorks';
+import WhyItMatters from './WhyItMatters';
 import CallToAction from './CallToAction';
 import Footer from './Footer';
 
@@ -18,6 +19,7 @@ export default function HomePage() {
         <Hero />
         <Features />
         <HowItWorks />
+        <WhyItMatters />
         <CallToAction />
       </main>
       <Footer />

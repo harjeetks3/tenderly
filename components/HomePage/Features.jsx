@@ -17,37 +17,37 @@ export default function Features() {
     {
       icon: MagnifyingGlassIcon,
       title: 'Intelligent Opportunity Discovery',
-      description: 'AI scans thousands of tender databases and alerts you to relevant opportunities matching your business profile.',
+      description: 'Find tenders that match your business using AI-curated feeds from official portals.',
       color: 'text-blue-600'
     },
     {
       icon: DocumentTextIcon,
-      title: 'Automated Document Analysis',
-      description: 'Advanced NLP processes tender documents to extract key requirements, deadlines, and evaluation criteria.',
+      title: 'Document Analysis & Summary',
+      description: 'Instantly extract deadlines, eligibility, and key scoring criteria.',
       color: 'text-teal-600'
     },
     {
       icon: ShieldCheckIcon,
-      title: 'Compliance Verification',
-      description: 'AI ensures your submissions meet all requirements and regulatory standards before submission.',
+      title: 'Compliance Assistant',
+      description: 'Automatically checks your bid against submission rules.',
       color: 'text-green-600'
     },
     {
       icon: SparklesIcon,
-      title: 'Smart Proposal Generation',
-      description: 'Generate compelling, tailored proposals using AI-powered writing assistance and best practice templates.',
+      title: 'Smart Proposal Generator',
+      description: 'Draft polished proposals with LLMs and best-practice templates.',
       color: 'text-purple-600'
     },
     {
       icon: ChartBarIcon,
-      title: 'Competitive Intelligence',
-      description: 'Analyze competitor strategies and market trends to optimize your bidding approach.',
+      title: 'Competitor Intelligence',
+      description: 'View anonymized trends and typical win conditions for your sector.',
       color: 'text-orange-600'
     },
     {
       icon: AdjustmentsHorizontalIcon,
-      title: 'Win Probability Scoring',
-      description: 'AI calculates your chances of success for each tender based on historical data and match quality.',
+      title: 'Win Rate Predictor',
+      description: 'AI estimates your match probability based on history and fit.',
       color: 'text-red-600'
     }
   ];
